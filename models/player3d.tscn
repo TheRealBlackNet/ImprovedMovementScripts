@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dix7pvdxvfi4n"]
+
+[ext_resource type="Script" path="res://models/player_3d.gd" id="1_24pdq"]
+
+[node name="Player3d" type="Node3D"]
+script = ExtResource("1_24pdq")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0628576, 0)
+radius = 0.204818
+height = 0.0540328
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.409186, 0)
+radius = 0.0826797
+height = 0.545962
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689534, 0)
+inner_radius = 0.11413
+outer_radius = 0.226922

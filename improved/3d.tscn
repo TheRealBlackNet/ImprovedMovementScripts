@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2chxl25whn1i"]
+
+[ext_resource type="PackedScene" uid="uid://byvcdefjsn1b3" path="res://models/map3d.tscn" id="1_n8yyg"]
+[ext_resource type="Script" path="res://improved/character_body_3d_FPS.gd" id="2_n8yyg"]
+[ext_resource type="PackedScene" uid="uid://dix7pvdxvfi4n" path="res://models/player3d.tscn" id="3_erx16"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_i5plx"]
+height = 1.49088
+radius = 0.265802
+
+[node name="3d-better" type="Node3D"]
+
+[node name="Map3d" parent="." instance=ExtResource("1_n8yyg")]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("2_n8yyg")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748309, 0)
+shape = SubResource("CylinderShape3D_i5plx")
+
+[node name="Player3d" parent="CharacterBody3D" instance=ExtResource("3_erx16")]
