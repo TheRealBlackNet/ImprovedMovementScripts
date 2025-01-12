@@ -6,6 +6,10 @@ const JUMP_VELOCITY:float = -400.0
 
 var doulbe_jump:bool = false
 
+func _ready() -> void:
+	# top down mode all collisions are walls
+	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		# Add the gravity\falling if in air:

@@ -4,6 +4,10 @@ class_name CharacterBody2DTopDownTank
 const DRIVE_SPEED:float = 120.0
 const TURN_SPEED:float = 2.0
 
+func _ready() -> void:
+	# top down mode all collisions are walls
+	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
+
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
