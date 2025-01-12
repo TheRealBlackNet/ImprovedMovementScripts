@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0hh0p455dqlx"]
+
+[ext_resource type="PackedScene" uid="uid://xo8fxfk1ot5g" path="res://models/mapTopDownWorld.tscn" id="1_1by47"]
+[ext_resource type="PackedScene" uid="uid://exra24qoillx" path="res://models/player_2d_tank.tscn" id="2_fh7mp"]
+[ext_resource type="Script" path="res://improved/character_body_2d_tank.gd" id="2_qc40a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qc40a"]
+radius = 34.1321
+
+[node name="2dTank" type="Node2D"]
+
+[node name="MapTopDownWorld" parent="." instance=ExtResource("1_1by47")]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(457, 264)
+rotation = -0.00974706
+motion_mode = 1
+script = ExtResource("2_qc40a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_qc40a")
+
+[node name="Player2d-Tank" parent="CharacterBody2D" instance=ExtResource("2_fh7mp")]
+position = Vector2(-0.292407, 29.9986)

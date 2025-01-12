@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://xo8fxfk1ot5g"]
+
+[ext_resource type="Shader" uid="uid://cksa8m2ywi8v" path="res://models/colbox.tres" id="1_tsi3k"]
+[ext_resource type="PackedScene" uid="uid://dj2rnwvhwnmyp" path="res://models/topdownTree.tscn" id="2_f7y0t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8a5g"]
+shader = ExtResource("1_tsi3k")
+shader_parameter/Color = Vector3(1.08, 0.295, 0.265)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvpng"]
+size = Vector2(23.625, 677.25)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tsi3k"]
+shader = ExtResource("1_tsi3k")
+shader_parameter/Color = Vector3(0.6, 0.305, 0.195)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7y0t"]
+size = Vector2(131.812, 200.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hxr6"]
+size = Vector2(1166, 25.625)
+
+[node name="MapTopDownWorld" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_d8a5g")
+position = Vector2(1151, 320)
+shape = SubResource("RectangleShape2D_gvpng")
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_tsi3k")
+position = Vector2(790, 484)
+rotation = -2.00034
+shape = SubResource("RectangleShape2D_f7y0t")
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_d8a5g")
+position = Vector2(1, 320)
+shape = SubResource("RectangleShape2D_gvpng")
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_d8a5g")
+position = Vector2(574, -3)
+shape = SubResource("RectangleShape2D_1hxr6")
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_d8a5g")
+position = Vector2(574, 652)
+shape = SubResource("RectangleShape2D_1hxr6")
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="TopdownTree" parent="StaticBody2D" instance=ExtResource("2_f7y0t")]
+position = Vector2(908, 151)
+scale = Vector2(0.76, 0.76)
+skew = -0.218166
+
+[node name="TopdownTree2" parent="StaticBody2D" instance=ExtResource("2_f7y0t")]
+position = Vector2(794, 90)
+
+[node name="TopdownTree3" parent="StaticBody2D" instance=ExtResource("2_f7y0t")]
+position = Vector2(161, 452)
+rotation = 1.98793
+
+[node name="TopdownTree4" parent="StaticBody2D" instance=ExtResource("2_f7y0t")]
+position = Vector2(1040, 382)
+rotation = -0.925025
+
+[node name="TopdownTree5" parent="StaticBody2D" instance=ExtResource("2_f7y0t")]
+position = Vector2(449, 531)
+rotation = 2.30733
+skew = 0.165806
+
+[node name="TopdownTree6" parent="StaticBody2D" instance=ExtResource("2_f7y0t")]
+position = Vector2(168, 119)
+rotation = -2.22704
+scale = Vector2(1.37, 1.37)

@@ -1,0 +1,147 @@
+[gd_scene load_steps=12 format=3 uid="uid://b852lespony7g"]
+
+[ext_resource type="Shader" uid="uid://cksa8m2ywi8v" path="res://models/colbox.tres" id="1_spt3q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqno6"]
+shader = ExtResource("1_spt3q")
+shader_parameter/Color = Vector3(0.47, 0.31, -0.045)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffk3t"]
+size = Vector2(1152.5, 11)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_spt3q"]
+shader = ExtResource("1_spt3q")
+shader_parameter/Color = Vector3(-0.04, 1.28, -0.045)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqno6"]
+size = Vector2(1152.5, 11)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ffk3t"]
+shader = ExtResource("1_spt3q")
+shader_parameter/Color = Vector3(1.08, 0.295, 0.265)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spt3q"]
+size = Vector2(23.625, 677.25)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a71kt"]
+shader = ExtResource("1_spt3q")
+shader_parameter/Color = Vector3(0.195, 0.14, 0.095)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72sh0"]
+size = Vector2(210.41, 60.3125)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kbwkm"]
+shader = ExtResource("1_spt3q")
+shader_parameter/Color = Vector3(1, 0.48, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a71kt"]
+size = Vector2(104.703, 9.07812)
+
+[node name="Map2d" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_dqno6")
+position = Vector2(583, 646)
+shape = SubResource("RectangleShape2D_ffk3t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_spt3q")
+position = Vector2(578, 637.5)
+shape = SubResource("RectangleShape2D_dqno6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_ffk3t")
+position = Vector2(1151, 320)
+shape = SubResource("RectangleShape2D_spt3q")
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_ffk3t")
+position = Vector2(1, 320)
+shape = SubResource("RectangleShape2D_spt3q")
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_a71kt")
+position = Vector2(440, 607.156)
+shape = SubResource("RectangleShape2D_72sh0")
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_a71kt")
+position = Vector2(260, 655)
+rotation = -0.523598
+shape = SubResource("RectangleShape2D_72sh0")
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_kbwkm")
+position = Vector2(657, 551)
+shape = SubResource("RectangleShape2D_a71kt")
+one_way_collision = true
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_kbwkm")
+position = Vector2(729, 484)
+shape = SubResource("RectangleShape2D_a71kt")
+one_way_collision = true
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_kbwkm")
+position = Vector2(812, 425)
+shape = SubResource("RectangleShape2D_a71kt")
+one_way_collision = true
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_kbwkm")
+position = Vector2(896, 355)
+shape = SubResource("RectangleShape2D_a71kt")
+one_way_collision = true
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_kbwkm")
+position = Vector2(978, 283)
+shape = SubResource("RectangleShape2D_a71kt")
+one_way_collision = true
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_kbwkm")
+position = Vector2(981, 214)
+shape = SubResource("RectangleShape2D_a71kt")
+one_way_collision = true
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_kbwkm")
+position = Vector2(981, 138)
+shape = SubResource("RectangleShape2D_a71kt")
+one_way_collision = true
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_kbwkm")
+position = Vector2(783, 135)
+shape = SubResource("RectangleShape2D_a71kt")
+one_way_collision = true
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_kbwkm")
+position = Vector2(432, 184)
+shape = SubResource("RectangleShape2D_a71kt")
+one_way_collision = true
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_kbwkm")
+position = Vector2(79, 183)
+shape = SubResource("RectangleShape2D_a71kt")
+one_way_collision = true
+debug_color = Color(0.793176, 0.186815, 0.436487, 0.42)

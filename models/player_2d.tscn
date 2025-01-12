@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://ckdieftgt5no8"]
+
+[ext_resource type="Script" path="res://models/player.gd" id="1_5j8xx"]
+[ext_resource type="Shader" uid="uid://cksa8m2ywi8v" path="res://models/colbox.tres" id="2_dbq2c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r34qx"]
+shader = ExtResource("2_dbq2c")
+shader_parameter/Color = Vector3(1.085, 0.9, 0.885)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_til3n"]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dbq2c"]
+radius = 1.0
+height = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_40icf"]
+shader = ExtResource("2_dbq2c")
+shader_parameter/Color = Vector3(0.19, 0.585, 0.785)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7um2t"]
+radius = 2.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r34qx"]
+radius = 1.0
+height = 6.0
+
+[sub_resource type="VisualShaderNodeVec3Parameter" id="VisualShaderNodeVec3Parameter_58u74"]
+parameter_name = "Color"
+
+[sub_resource type="VisualShader" id="VisualShader_cik4g"]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform vec3 Color;
+
+
+
+void fragment() {
+// Vector3Parameter:4
+	vec3 n_out4p0 = Color;
+
+
+// Output:0
+	COLOR.rgb = n_out4p0;
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(580, 160)
+nodes/fragment/4/node = SubResource("VisualShaderNodeVec3Parameter_58u74")
+nodes/fragment/4/position = Vector2(120, 160)
+nodes/fragment/connections = PackedInt32Array(4, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmjhd"]
+shader = SubResource("VisualShader_cik4g")
+shader_parameter/Color = Vector3(0.95, 0.545, 0.325)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mpxp"]
+radius = 1.0
+height = 4.0
+
+[node name="Player2d" type="Node2D"]
+script = ExtResource("1_5j8xx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(5, 5)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_r34qx")
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_til3n")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_r34qx")
+position = Vector2(-3, -6)
+shape = SubResource("CapsuleShape2D_dbq2c")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_r34qx")
+position = Vector2(3, -6)
+shape = SubResource("CapsuleShape2D_dbq2c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_40icf")
+position = Vector2(0, -8)
+shape = SubResource("CapsuleShape2D_7um2t")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_40icf")
+position = Vector2(-3, -9)
+shape = SubResource("CapsuleShape2D_r34qx")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_40icf")
+position = Vector2(3, -9)
+shape = SubResource("CapsuleShape2D_r34qx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_qmjhd")
+position = Vector2(-2, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3mpxp")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_qmjhd")
+position = Vector2(2, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3mpxp")

@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
 
-[node name="Label" type="Label" parent="."]
+[node name="LabelTitle" type="Label" parent="."]
 layout_mode = 0
 offset_left = 38.0
 offset_top = 27.0
@@ -20,7 +20,7 @@ offset_bottom = 113.0
 theme_override_font_sizes/font_size = 47
 text = "a proposal for improved movement scripts"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label3D" type="Label" parent="."]
 layout_mode = 0
 offset_left = 719.0
 offset_top = 130.0
@@ -28,6 +28,15 @@ offset_right = 821.0
 offset_bottom = 195.0
 theme_override_font_sizes/font_size = 47
 text = "3D"
+
+[node name="Label2D" type="Label" parent="."]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 130.0
+offset_right = 275.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 47
+text = "2D"
 
 [node name="Button3do" type="Button" parent="."]
 layout_mode = 0
@@ -39,11 +48,40 @@ text = "original"
 
 [node name="Button3du" type="Button" parent="."]
 layout_mode = 0
-offset_left = 716.0
-offset_top = 304.0
-offset_right = 928.0
-offset_bottom = 362.0
+offset_left = 719.0
+offset_top = 316.0
+offset_right = 931.0
+offset_bottom = 374.0
 text = "update"
+
+[node name="Button2do" type="Button" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 222.0
+offset_right = 372.0
+offset_bottom = 280.0
+text = "original"
+
+[node name="Button2du_JumpAndRun" type="Button" parent="."]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 306.0
+offset_right = 375.0
+offset_bottom = 364.0
+text = "update (jump and run)
+"
+
+[node name="Button2du_Tank" type="Button" parent="."]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 386.0
+offset_right = 377.0
+offset_bottom = 444.0
+text = "update (tank)
+"
 
 [connection signal="pressed" from="Button3do" to="." method="_on_button_3_do_pressed"]
 [connection signal="pressed" from="Button3du" to="." method="_on_button_3_du_pressed"]
+[connection signal="pressed" from="Button2do" to="." method="_on_button_2_do_pressed"]
+[connection signal="pressed" from="Button2du_JumpAndRun" to="." method="_on_button_2_du_pressed"]
+[connection signal="pressed" from="Button2du_Tank" to="." method="_on_button_2_du_tank_pressed"]

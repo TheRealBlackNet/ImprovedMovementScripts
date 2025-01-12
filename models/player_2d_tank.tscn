@@ -1,0 +1,99 @@
+[gd_scene load_steps=11 format=3 uid="uid://exra24qoillx"]
+
+[ext_resource type="Script" path="res://models/player.gd" id="1_3garn"]
+
+[sub_resource type="Shader" id="Shader_vm10j"]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform vec3 Color;
+
+void fragment() {
+	COLOR.rgb = Color;
+	COLOR.a = 1.0;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_40icf"]
+shader = SubResource("Shader_vm10j")
+shader_parameter/Color = Vector3(0, 0.635, 0.195)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3garn"]
+size = Vector2(4, 7.6)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_22730"]
+shader = SubResource("Shader_vm10j")
+shader_parameter/Color = Vector3(0, 0.405, 0.08)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_er48w"]
+size = Vector2(1.2, 5.6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4tkw"]
+radius = 1.6
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r34qx"]
+radius = 1.0
+height = 9.6
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xcjog"]
+radius = 0.400001
+height = 7.2
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r6dlq"]
+radius = 0.2
+height = 1.6
+
+[node name="Player2d-Tank" type="Node2D"]
+script = ExtResource("1_3garn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(5, 5)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_40icf")
+position = Vector2(0, -5.8)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3garn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_22730")
+position = Vector2(0, -9.6)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_er48w")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_22730")
+position = Vector2(0, -6)
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_s4tkw")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_40icf")
+position = Vector2(-3.4, -5.6)
+shape = SubResource("CapsuleShape2D_r34qx")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_40icf")
+position = Vector2(3.4, -5.6)
+shape = SubResource("CapsuleShape2D_r34qx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_22730")
+position = Vector2(3.8, -4.8)
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_xcjog")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_22730")
+position = Vector2(-3, -4.8)
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_xcjog")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("ShaderMaterial_40icf")
+position = Vector2(-5.25802e-14, -12.4)
+rotation = 1.5708
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_r6dlq")

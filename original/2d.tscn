@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://46sd1f5npd1x"]
+
+[ext_resource type="PackedScene" uid="uid://b852lespony7g" path="res://models/map2d.tscn" id="1_qkdc2"]
+[ext_resource type="Script" path="res://original/character_body_2d.gd" id="2_8guk8"]
+[ext_resource type="PackedScene" uid="uid://ckdieftgt5no8" path="res://models/player_2d.tscn" id="2_x8rxk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8guk8"]
+radius = 22.0
+height = 92.0
+
+[node name="2d" type="Node2D"]
+
+[node name="Map2d" parent="." instance=ExtResource("1_qkdc2")]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(198, 155)
+script = ExtResource("2_8guk8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -45)
+shape = SubResource("CapsuleShape2D_8guk8")
+
+[node name="Player2d" parent="CharacterBody2D" instance=ExtResource("2_x8rxk")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 321)
