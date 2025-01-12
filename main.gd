@@ -23,3 +23,6 @@ func _on_button_2_du_pressed() -> void:
 
 func _on_button_2_du_tank_pressed() -> void:
 	get_tree().change_scene_to_file("res://improved/2d_tank.tscn")
+
+func _on_button_2_du_top_down_pressed() -> void:
+	get_tree().change_scene_to_file("res://improved/2d_topDown8Dir.tscn")

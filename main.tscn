@@ -80,8 +80,18 @@ offset_bottom = 444.0
 text = "update (tank)
 "
 
+[node name="Button2du_TopDown" type="Button" parent="."]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 463.0
+offset_right = 379.0
+offset_bottom = 521.0
+text = "update (top down)
+"
+
 [connection signal="pressed" from="Button3do" to="." method="_on_button_3_do_pressed"]
 [connection signal="pressed" from="Button3du" to="." method="_on_button_3_du_pressed"]
 [connection signal="pressed" from="Button2do" to="." method="_on_button_2_do_pressed"]
 [connection signal="pressed" from="Button2du_JumpAndRun" to="." method="_on_button_2_du_pressed"]
 [connection signal="pressed" from="Button2du_Tank" to="." method="_on_button_2_du_tank_pressed"]
+[connection signal="pressed" from="Button2du_TopDown" to="." method="_on_button_2_du_top_down_pressed"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dedbvgk6m3u63"]
+
+[ext_resource type="PackedScene" uid="uid://xo8fxfk1ot5g" path="res://models/mapTopDownWorld.tscn" id="1_ngx3y"]
+[ext_resource type="PackedScene" uid="uid://cr4twsv7x30rx" path="res://models/player_2d_topdown.tscn" id="2_am6dj"]
+[ext_resource type="Script" path="res://improved/character_body_2d_top_down.gd" id="2_wt5ug"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wt5ug"]
+radius = 31.0161
+
+[node name="2dTopDown8Dir" type="Node2D"]
+
+[node name="MapTopDownWorld" parent="." instance=ExtResource("1_ngx3y")]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(509, 252)
+script = ExtResource("2_wt5ug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_wt5ug")
+
+[node name="Player2d" parent="CharacterBody2D" instance=ExtResource("2_am6dj")]
+position = Vector2(-1, 28)
+scale = Vector2(1.5, 1.5)
